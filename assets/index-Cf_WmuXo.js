@@ -258,7 +258,25 @@ width: 100%;
  * LICENSE.md file in the root directory of this source tree.
  *
  * @license MIT
- */const REACT_ROUTER_VERSION="6";try{window.__reactRouterVersion=REACT_ROUTER_VERSION}catch{}const START_TRANSITION="startTransition",startTransitionImpl=React$1[START_TRANSITION];function BrowserRouter(e){let{basename:i,children:a,future:s,window:o}=e,c=reactExports.useRef();c.current==null&&(c.current=createBrowserHistory({window:o,v5Compat:!0}));let d=c.current,[nt,tt]=reactExports.useState({action:d.action,location:d.location}),{v7_startTransition:ot}=s||{},ht=reactExports.useCallback(yt=>{ot&&startTransitionImpl?startTransitionImpl(()=>tt(yt)):tt(yt)},[tt,ot]);return reactExports.useLayoutEffect(()=>d.listen(ht),[d,ht]),reactExports.createElement(Router,{basename:i,children:a,location:nt.location,navigationType:nt.action,navigator:d,future:s})}var DataRouterHook;(function(e){e.UseScrollRestoration="useScrollRestoration",e.UseSubmit="useSubmit",e.UseSubmitFetcher="useSubmitFetcher",e.UseFetcher="useFetcher",e.useViewTransitionState="useViewTransitionState"})(DataRouterHook||(DataRouterHook={}));var DataRouterStateHook;(function(e){e.UseFetcher="useFetcher",e.UseFetchers="useFetchers",e.UseScrollRestoration="useScrollRestoration"})(DataRouterStateHook||(DataRouterStateHook={}));const HeroContainer=dt.section`
+ */const REACT_ROUTER_VERSION="6";try{window.__reactRouterVersion=REACT_ROUTER_VERSION}catch{}const START_TRANSITION="startTransition",startTransitionImpl=React$1[START_TRANSITION];function BrowserRouter(e){let{basename:i,children:a,future:s,window:o}=e,c=reactExports.useRef();c.current==null&&(c.current=createBrowserHistory({window:o,v5Compat:!0}));let d=c.current,[nt,tt]=reactExports.useState({action:d.action,location:d.location}),{v7_startTransition:ot}=s||{},ht=reactExports.useCallback(yt=>{ot&&startTransitionImpl?startTransitionImpl(()=>tt(yt)):tt(yt)},[tt,ot]);return reactExports.useLayoutEffect(()=>d.listen(ht),[d,ht]),reactExports.createElement(Router,{basename:i,children:a,location:nt.location,navigationType:nt.action,navigator:d,future:s})}var DataRouterHook;(function(e){e.UseScrollRestoration="useScrollRestoration",e.UseSubmit="useSubmit",e.UseSubmitFetcher="useSubmitFetcher",e.UseFetcher="useFetcher",e.useViewTransitionState="useViewTransitionState"})(DataRouterHook||(DataRouterHook={}));var DataRouterStateHook;(function(e){e.UseFetcher="useFetcher",e.UseFetchers="useFetchers",e.UseScrollRestoration="useScrollRestoration"})(DataRouterStateHook||(DataRouterStateHook={}));const fadeIn$4=mt`
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+`;mt`
+  from {
+    transform: scale(1);
+    box-shadow: 0 0 0px rgba(255, 255, 255, 0.5);
+  }
+  to {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.8);
+  }
+`;const HeroContainer=dt.section`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -276,6 +294,7 @@ width: 100%;
   }
 `,HeroText=dt.div`
   max-width: 600px;
+  animation: ${fadeIn$4} 1s ease forwards;
   
   h1 {
     font-size: 2.5rem;
@@ -332,6 +351,7 @@ width: 100%;
   }
 `,RightPane=dt.div`
   display: none;
+  animation: ${fadeIn$4} 1s ease forwards;
 
   @media(min-width: 768px) {
     display: block;
@@ -370,7 +390,7 @@ width: 100%;
     50% { transform: scale(1.2); opacity: 1; }
     100% { transform: scale(1); opacity: 0.7; }
   }
-`,Hero=()=>{const[e,i]=reactExports.useState(!1),a=reactExports.useRef(null);return reactExports.useEffect(()=>{const s=new IntersectionObserver(([o])=>i(o.isIntersecting),{threshold:.1});return a.current&&s.observe(a.current),()=>{a.current&&s.unobserve(a.current)}},[]),jsxRuntimeExports.jsx(HeroContainer,{ref:a,children:e&&jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment,{children:[jsxRuntimeExports.jsxs(HeroText,{children:[jsxRuntimeExports.jsx("h1",{children:"Redefining Innovation"}),jsxRuntimeExports.jsx("p",{children:"Empowering creators and innovators to push boundaries, collaborate, and revolutionize industries with unmatched tools and creative solutions."}),jsxRuntimeExports.jsx(CTAButton$1,{href:"#about-us",children:"Discover More 🚀"})]}),jsxRuntimeExports.jsxs(RightPane,{children:[jsxRuntimeExports.jsx(FloatingShape,{size:120,top:"30%",left:"20%"}),jsxRuntimeExports.jsx(FloatingShape,{size:80,top:"70%",left:"50%",color:"#ed2647"}),jsxRuntimeExports.jsx(FloatingShape,{size:100,top:"50%",left:"80%"}),jsxRuntimeExports.jsx(GlowEffect,{})]})]})})},fadeInUp$1=mt`
+`,Hero=()=>{const[e,i]=reactExports.useState(!1),a=reactExports.useRef(null);return reactExports.useEffect(()=>{const s=new IntersectionObserver(([o])=>i(o.isIntersecting),{threshold:.1});return a.current&&s.observe(a.current),()=>{a.current&&s.unobserve(a.current)}},[]),jsxRuntimeExports.jsx(HeroContainer,{ref:a,children:e&&jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment,{children:[jsxRuntimeExports.jsxs(HeroText,{children:[jsxRuntimeExports.jsx("h1",{children:"Redefining Innovation"}),jsxRuntimeExports.jsx("p",{children:"Empowering creators and innovators to push boundaries, collaborate, and revolutionize industries with unmatched tools and creative solutions."}),jsxRuntimeExports.jsx(CTAButton$1,{href:"#about-us",children:"Discover More 🚀"})]}),jsxRuntimeExports.jsxs(RightPane,{children:[jsxRuntimeExports.jsx(FloatingShape,{size:120,top:"30%",left:"20%"}),jsxRuntimeExports.jsx(FloatingShape,{size:80,top:"70%",left:"50%",color:"#ed2647"}),jsxRuntimeExports.jsx(FloatingShape,{size:100,top:"50%",left:"80%"}),jsxRuntimeExports.jsx(GlowEffect,{})]})]})})};mt`
   0% {
     opacity: 0;
     transform: translateY(30px);
@@ -400,7 +420,7 @@ width: 100%;
 `,LeftContent=dt.div`
   flex: 1;
   padding-right: 50px;
-  //animation: ${fadeInUp$1} 1s ease-in forwards;
+  animation: ${fadeIn$4} 1s ease forwards;
 
   @media (max-width: 768px) {
     padding-right: 0;
@@ -421,14 +441,13 @@ width: 100%;
   margin-bottom: 40px;
   max-width: 600px;
   line-height: 1.7;
-  //animation: ${fadeInUp$1} 1.2s ease-in forwards;
 
   @media (max-width: 768px) {
     font-size: 1.2rem;
   }
 `,RightImage=dt.div`
   flex: 1;
-  //animation: ${fadeInUp$1} 1.5s ease-in forwards;
+  animation: ${fadeIn$4} 1s ease forwards;
 
   img {
     width: 100%;
@@ -462,6 +481,7 @@ width: 100%;
 display: flex;
 justify-content: space-around;
 align-items: center;
+animation: ${fadeIn$4} 1s ease forwards;
 
 @media (max-width: 768px) {
     flex-direction: column;
@@ -534,32 +554,9 @@ align-items: center;
     font-size: 1rem;
     padding: 12px 30px;
   }
-`,AboutUs=()=>{const[e,i]=reactExports.useState(!1),a=reactExports.useRef(null);return reactExports.useEffect(()=>{const s=new IntersectionObserver(([o])=>i(o.isIntersecting),{threshold:.1});return a.current&&s.observe(a.current),()=>{a.current&&s.unobserve(a.current)}},[]),jsxRuntimeExports.jsx(AboutUsContainer,{id:"about-us",ref:a,children:e&&jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment,{children:[jsxRuntimeExports.jsxs(LeftContent,{children:[jsxRuntimeExports.jsx(SectionTitle$1,{children:"Your Vision. Our Craft."}),jsxRuntimeExports.jsx(Paragraph,{children:"Hey there, trailblazer! Welcome to UsCreativz—the rebel force where creativity collides with innovation. If you’re tired of playing by the old rules, you’ve found your crew. Whether you’re a business looking to break the mold, or a creator aiming to push boundaries, you’re about to enter a world where creativity is limitless and bold ideas take over. Our mission? Empowering creators and businesses to build, design, and produce like never before. We don’t just create websites, apps, or digital content. We translate ideas into experiences that reflects creativity, engages audiences, and resonates long after the first click."}),jsxRuntimeExports.jsx(CTAButton,{href:"#solutions",children:"Our Solutions"})]}),jsxRuntimeExports.jsx(RightImage,{children:jsxRuntimeExports.jsx("img",{src:logo,width:600,alt:"UsCreativz AboutUs"})})]})})},fadeIn$4=mt`
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-`;mt`
-  from {
-    transform: scale(1);
-    box-shadow: 0 0 0px rgba(255, 255, 255, 0.5);
-  }
-  to {
-    transform: scale(1.05);
-    box-shadow: 0 0 30px rgba(255, 255, 255, 0.8);
-  }
-`;const backgroundAnimation=mt`
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-`,CuratedSolutionsContainer=dt.section`
+`,AboutUs=()=>{const[e,i]=reactExports.useState(!1),a=reactExports.useRef(null);return reactExports.useEffect(()=>{const s=new IntersectionObserver(([o])=>i(o.isIntersecting),{threshold:.1});return a.current&&s.observe(a.current),()=>{a.current&&s.unobserve(a.current)}},[]),jsxRuntimeExports.jsx(AboutUsContainer,{id:"about-us",ref:a,children:e&&jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment,{children:[jsxRuntimeExports.jsxs(LeftContent,{children:[jsxRuntimeExports.jsx(SectionTitle$1,{children:"Your Vision. Our Craft."}),jsxRuntimeExports.jsx(Paragraph,{children:"Hey there, trailblazer! Welcome to UsCreativz—the rebel force where creativity collides with innovation. If you’re tired of playing by the old rules, you’ve found your crew. Whether you’re a business looking to break the mold, or a creator aiming to push boundaries, you’re about to enter a world where creativity is limitless and bold ideas take over. Our mission? Empowering creators and businesses to build, design, and produce like never before. We don’t just create websites, apps, or digital content. We translate ideas into experiences that reflects creativity, engages audiences, and resonates long after the first click."}),jsxRuntimeExports.jsx(CTAButton,{href:"#solutions",children:"Our Solutions"})]}),jsxRuntimeExports.jsx(RightImage,{children:jsxRuntimeExports.jsx("img",{src:logo,width:600,alt:"UsCreativz AboutUs"})})]})})},CuratedSolutionsContainer=dt.section`
   padding: 100px 5%;
   background-size: 400% 400%;
-  //animation: ${backgroundAnimation} 8s ease infinite;
   text-align: center;
   min-height: 100vh;
 
@@ -570,6 +567,7 @@ align-items: center;
     margin-bottom: 40px;
     color: #fff;
     font-family: "Serif", serif;
+    animation: ${fadeIn$4} 1s ease forwards;
 
     @media (max-width: 768px) {
       font-size: 2.5rem;
@@ -577,12 +575,12 @@ align-items: center;
   }
 `,SolutionsWrapper=dt.div`
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: flex-start;
-  flex-wrap: wrap;
   gap: 0.5rem;
 
   transition: 1s ease-in-out;
+  animation: ${fadeIn$4} 1s ease forwards;
 
   @media (max-width: 1024px) {
     flex-direction: column;
@@ -590,7 +588,7 @@ align-items: center;
   }
 `,SolutionCard=dt.a`
   text-decoration: none;
-  width: 25%;
+  width: 90%;
   padding: 2rem;
   border-radius: 15px;
   background-color: #ffffffa1;
@@ -1163,14 +1161,7 @@ s.goToAndStop(Et-s.firstFrame-1,!0)}vt.type==="loop"&&(ht===null||ht!==vt.frames
     opacity: 1;
     transform: translateY(0);
   }
-`;mt`
-  0% {
-    width: 0;
-  }
-  100% {
-    width: 100%;
-  }
-`;const AppDevSolutionContainer=dt.section`
+`,AppDevSolutionContainer=dt.section`
 display: flex;
 flex-direction: column;
 gap: 2rem;
@@ -1185,6 +1176,7 @@ gap: 2rem;
     color: #fff;
     font-family: 'Serif', serif;
     margin-bottom: 20px;
+    animation: ${fadeIn$4} 1s ease forwards;
     
     @media (max-width: 768px) {
       font-size: 2.5rem;
@@ -1197,6 +1189,7 @@ gap: 2rem;
   margin-top: 50px;
   position: relative;
   z-index: 2;
+  animation: ${fadeIn$4} 1s ease forwards;
 
   @media (max-width: 1024px) {
     grid-template-columns: 1fr;
@@ -3115,7 +3108,7 @@ SPDX-License-Identifier: Apache-2.0
     color: #333;
     font-family: 'Serif', serif;
     margin-bottom: 40px;
-    //animation: ${fadeIn$1} 1s ease forwards;
+    animation: ${fadeIn$1} 1s ease forwards;
 
     @media (max-width: 768px) {
       font-size: 2.5rem;
@@ -3128,6 +3121,7 @@ SPDX-License-Identifier: Apache-2.0
   flex-wrap: wrap;
   position: relative;
   margin-top: 50px;
+  animation: ${fadeIn$1} 1s ease forwards;
 
   @media (max-width: 1024px) {
     flex-direction: column;
@@ -3220,7 +3214,7 @@ SPDX-License-Identifier: Apache-2.0
     color: #333;
     font-family: 'Serif', serif;
     margin-bottom: 40px;
-    //animation: ${fadeIn} 1s ease forwards;
+    animation: ${fadeIn} 1s ease forwards;
 
     @media (max-width: 768px) {
       font-size: 2.5rem;
@@ -3231,6 +3225,7 @@ SPDX-License-Identifier: Apache-2.0
   flex-direction: column;
   align-items: center;
   position: relative;
+  animation: ${fadeIn} 1s ease forwards;
 
   @media (max-width: 768px) {
     align-items: center;
@@ -3293,7 +3288,7 @@ SPDX-License-Identifier: Apache-2.0
   @media (max-width: 768px) {
     font-size: 1rem;
   }
-`,DigitalMediaSolution=()=>{const[e,i]=reactExports.useState(!1),a=reactExports.useRef(null);return reactExports.useEffect(()=>{const s=new IntersectionObserver(([o])=>i(o.isIntersecting),{threshold:.1});return a.current&&s.observe(a.current),()=>{a.current&&s.unobserve(a.current)}},[]),jsxRuntimeExports.jsx(DigitalMediaSolutionContainer,{id:"solution-digital-media",ref:a,children:e&&jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment,{children:[jsxRuntimeExports.jsx("h2",{children:"From Concept to Engagement"}),jsxRuntimeExports.jsxs(StepWrapper,{children:[jsxRuntimeExports.jsxs(Step,{children:[jsxRuntimeExports.jsx(StepNumber,{children:"01"}),jsxRuntimeExports.jsxs(StepContent,{children:[jsxRuntimeExports.jsx(StepTitle,{children:"Dialogue & Exploration"}),jsxRuntimeExports.jsx(StepDescription,{children:"We begin by diving deep into your brand’s essence. Through discussion and exploration, we uncover what makes your brand unique."})]})]}),jsxRuntimeExports.jsxs(Step,{children:[jsxRuntimeExports.jsx(StepNumber,{children:"02"}),jsxRuntimeExports.jsxs(StepContent,{children:[jsxRuntimeExports.jsx(StepTitle,{children:"Custom Strategy"}),jsxRuntimeExports.jsx(StepDescription,{children:"Next, we develop a tailored digital strategy that aligns with your goals. This is where the magic starts to happen, as we begin crafting your digital presence."})]})]}),jsxRuntimeExports.jsxs(Step,{children:[jsxRuntimeExports.jsx(StepNumber,{children:"03"}),jsxRuntimeExports.jsxs(StepContent,{children:[jsxRuntimeExports.jsx(StepTitle,{children:"Design & Production"}),jsxRuntimeExports.jsx(StepDescription,{children:"Our team of remote creators bring the strategy to life with precise design and production. Every pixel and frame is intentional, and every interaction is purposeful."})]})]}),jsxRuntimeExports.jsxs(Step,{children:[jsxRuntimeExports.jsx(StepNumber,{children:"04"}),jsxRuntimeExports.jsxs(StepContent,{children:[jsxRuntimeExports.jsx(StepTitle,{children:"Launch & Evolve"}),jsxRuntimeExports.jsx(StepDescription,{children:"After launch, our partnership doesn’t end. We continue to refine and evolve your digital presence, ensuring it grows with your brand’s needs."})]})]})]}),jsxRuntimeExports.jsxs(Flex,{children:[jsxRuntimeExports.jsx(CTAButton,{href:"#solution-web-design",children:"Building Online Presence"}),jsxRuntimeExports.jsx(CTAButton,{href:"#solution-app-development",children:"Developing Applicaions"}),jsxRuntimeExports.jsx(CTAButton,{href:"#solution-digital-content",children:"Creating Content"}),jsxRuntimeExports.jsx(CTAButton,{href:"#onboard",children:"Solve Custom Problem"})]})]})})},digital_world="/assets/digital_world-HCIB_xCi.mp4",FeaturedApps=()=>{const[e,i]=reactExports.useState(!1),a=reactExports.useRef(null);return reactExports.useEffect(()=>{const s=new IntersectionObserver(([o])=>i(o.isIntersecting),{threshold:.1});return a.current&&s.observe(a.current),()=>{a.current&&s.unobserve(a.current)}},[]),jsxRuntimeExports.jsx(CuratedSolutionsContainer,{id:"solutions",ref:a,children:e&&jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment,{children:[jsxRuntimeExports.jsx("h2",{children:"The Future of (AI) Creation."}),jsxRuntimeExports.jsxs(SolutionsWrapper,{children:[jsxRuntimeExports.jsxs(SolutionCard,{href:"#solution-web-design",children:[jsxRuntimeExports.jsx(LottiePlayer,{animationFile:digitalStrategyAnim}),jsxRuntimeExports.jsx(CardTitle$1,{children:"Document AI"}),jsxRuntimeExports.jsxs(CardDescription,{children:["No need to wait, ",jsxRuntimeExports.jsx("br",{})," No need to worry! ",jsxRuntimeExports.jsx("br",{})," (Coming Soon)"]})]}),jsxRuntimeExports.jsxs(SolutionCard,{href:"#solution-web-design",children:[jsxRuntimeExports.jsx(LottiePlayer,{animationFile:digitalStrategyAnim}),jsxRuntimeExports.jsx(CardTitle$1,{children:"Website AI"}),jsxRuntimeExports.jsxs(CardDescription,{children:["No need to wait, ",jsxRuntimeExports.jsx("br",{})," No need to worry! ",jsxRuntimeExports.jsx("br",{})," (Coming Soon)"]})]}),jsxRuntimeExports.jsxs(SolutionCard,{href:"#solution-app-development",children:[jsxRuntimeExports.jsx(LottiePlayer,{animationFile:appDevAnim}),jsxRuntimeExports.jsx(CardTitle$1,{children:"Content AI"}),jsxRuntimeExports.jsx(CardDescription,{children:"Intuitive. Engaging. Designed to move your audience."})]}),jsxRuntimeExports.jsxs(SolutionCard,{href:"#solution-digital-content",children:[jsxRuntimeExports.jsx(LottiePlayer,{animationFile:digitalMediaAnim}),jsxRuntimeExports.jsx(CardTitle$1,{children:"Video AI"}),jsxRuntimeExports.jsx(CardDescription,{children:"Reach new audiences, sustain digital presence."})]})]})]})})},AnimatedBackground=dt.div`
+`,DigitalMediaSolution=()=>{const[e,i]=reactExports.useState(!1),a=reactExports.useRef(null);return reactExports.useEffect(()=>{const s=new IntersectionObserver(([o])=>i(o.isIntersecting),{threshold:.1});return a.current&&s.observe(a.current),()=>{a.current&&s.unobserve(a.current)}},[]),jsxRuntimeExports.jsx(DigitalMediaSolutionContainer,{id:"solution-digital-media",ref:a,children:e&&jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment,{children:[jsxRuntimeExports.jsx("h2",{children:"From Concept to Engagement"}),jsxRuntimeExports.jsxs(StepWrapper,{children:[jsxRuntimeExports.jsxs(Step,{children:[jsxRuntimeExports.jsx(StepNumber,{children:"01"}),jsxRuntimeExports.jsxs(StepContent,{children:[jsxRuntimeExports.jsx(StepTitle,{children:"Dialogue & Exploration"}),jsxRuntimeExports.jsx(StepDescription,{children:"We begin by diving deep into your brand’s essence. Through discussion and exploration, we uncover what makes your brand unique."})]})]}),jsxRuntimeExports.jsxs(Step,{children:[jsxRuntimeExports.jsx(StepNumber,{children:"02"}),jsxRuntimeExports.jsxs(StepContent,{children:[jsxRuntimeExports.jsx(StepTitle,{children:"Custom Strategy"}),jsxRuntimeExports.jsx(StepDescription,{children:"Next, we develop a tailored digital strategy that aligns with your goals. This is where the magic starts to happen, as we begin crafting your digital presence."})]})]}),jsxRuntimeExports.jsxs(Step,{children:[jsxRuntimeExports.jsx(StepNumber,{children:"03"}),jsxRuntimeExports.jsxs(StepContent,{children:[jsxRuntimeExports.jsx(StepTitle,{children:"Design & Production"}),jsxRuntimeExports.jsx(StepDescription,{children:"Our team of remote creators bring the strategy to life with precise design and production. Every pixel and frame is intentional, and every interaction is purposeful."})]})]}),jsxRuntimeExports.jsxs(Step,{children:[jsxRuntimeExports.jsx(StepNumber,{children:"04"}),jsxRuntimeExports.jsxs(StepContent,{children:[jsxRuntimeExports.jsx(StepTitle,{children:"Launch & Evolve"}),jsxRuntimeExports.jsx(StepDescription,{children:"After launch, our partnership doesn’t end. We continue to refine and evolve your digital presence, ensuring it grows with your brand’s needs."})]})]})]}),jsxRuntimeExports.jsxs(Flex,{children:[jsxRuntimeExports.jsx(CTAButton,{href:"#solution-web-design",children:"Building Online Presence"}),jsxRuntimeExports.jsx(CTAButton,{href:"#solution-app-development",children:"Developing Applicaions"}),jsxRuntimeExports.jsx(CTAButton,{href:"#solution-digital-content",children:"Creating Content"}),jsxRuntimeExports.jsx(CTAButton,{href:"#onboard",children:"Solve Custom Problem"})]})]})})},FeaturedApps=()=>{const[e,i]=reactExports.useState(!1),a=reactExports.useRef(null);return reactExports.useEffect(()=>{const s=new IntersectionObserver(([o])=>i(o.isIntersecting),{threshold:.1});return a.current&&s.observe(a.current),()=>{a.current&&s.unobserve(a.current)}},[]),jsxRuntimeExports.jsx(CuratedSolutionsContainer,{id:"solutions",ref:a,children:e&&jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment,{children:[jsxRuntimeExports.jsx("h2",{children:"The Future of (AI) Creation."}),jsxRuntimeExports.jsxs(SolutionsWrapper,{children:[jsxRuntimeExports.jsxs(SolutionCard,{href:"#solution-web-design",children:[jsxRuntimeExports.jsx(LottiePlayer,{animationFile:digitalStrategyAnim}),jsxRuntimeExports.jsx(CardTitle$1,{children:"Document AI"}),jsxRuntimeExports.jsxs(CardDescription,{children:["No need to wait, ",jsxRuntimeExports.jsx("br",{})," No need to worry! ",jsxRuntimeExports.jsx("br",{})," (Coming Soon)"]})]}),jsxRuntimeExports.jsxs(SolutionCard,{href:"#solution-web-design",children:[jsxRuntimeExports.jsx(LottiePlayer,{animationFile:digitalStrategyAnim}),jsxRuntimeExports.jsx(CardTitle$1,{children:"Website AI"}),jsxRuntimeExports.jsxs(CardDescription,{children:["No need to wait, ",jsxRuntimeExports.jsx("br",{})," No need to worry! ",jsxRuntimeExports.jsx("br",{})," (Coming Soon)"]})]}),jsxRuntimeExports.jsxs(SolutionCard,{href:"#solution-app-development",children:[jsxRuntimeExports.jsx(LottiePlayer,{animationFile:appDevAnim}),jsxRuntimeExports.jsx(CardTitle$1,{children:"Content AI"}),jsxRuntimeExports.jsx(CardDescription,{children:"Intuitive. Engaging. Designed to move your audience."})]}),jsxRuntimeExports.jsxs(SolutionCard,{href:"#solution-digital-content",children:[jsxRuntimeExports.jsx(LottiePlayer,{animationFile:digitalMediaAnim}),jsxRuntimeExports.jsx(CardTitle$1,{children:"Video AI"}),jsxRuntimeExports.jsx(CardDescription,{children:"Reach new audiences, sustain digital presence."})]})]})]})})},AnimatedBackground=dt.div`
   position: fixed;
   top: 0;
   left: 0;
@@ -3303,7 +3298,7 @@ SPDX-License-Identifier: Apache-2.0
   backdrop-filter: blur(4px);
   background-size: 200% 200%;
   z-index: -1;
-`,BackgroundVideo=dt.video`
+`,BackgroundImage=dt.img`
   position: fixed;
   top: 0;
   left: 0;
@@ -3311,7 +3306,7 @@ SPDX-License-Identifier: Apache-2.0
   height: 100vh;
   object-fit: cover;
   z-index: -2;
-`,LandingPage=()=>jsxRuntimeExports.jsxs("div",{children:[jsxRuntimeExports.jsxs(BackgroundVideo,{autoPlay:!0,muted:!0,loop:!0,playsInline:!0,children:[jsxRuntimeExports.jsx("source",{src:digital_world,type:"video/mp4"}),"Your browser does not support the video tag."]}),jsxRuntimeExports.jsx(AnimatedBackground,{}),jsxRuntimeExports.jsx(Hero,{}),jsxRuntimeExports.jsx(AboutUs,{}),jsxRuntimeExports.jsx(CuratedSolutions,{}),jsxRuntimeExports.jsx(WebDesignSoulution,{}),jsxRuntimeExports.jsx(AppDevSolution,{}),jsxRuntimeExports.jsx(FeaturedApps,{}),jsxRuntimeExports.jsx(DigitalMediaSolution,{}),jsxRuntimeExports.jsx(BookConsultation,{})]}),ScribdWhitepaper=()=>(reactExports.useEffect(()=>{var a;const e=document.createElement("script");e.type="text/javascript",e.async=!0,e.src="https://www.scribd.com/javascripts/embed_code/inject.js";const i=document.getElementsByTagName("script")[0];(a=i.parentNode)==null||a.insertBefore(e,i)},[]),jsxRuntimeExports.jsx("div",{className:"mobile",style:{margin:"12px auto 6px auto",fontFamily:"Helvetica,Arial,Sans-serif",fontSize:"14px",display:"block"},children:jsxRuntimeExports.jsx("iframe",{className:"scribd_iframe_embed",title:"UsCreativz Whitepaper (v1)",src:"https://www.scribd.com/embeds/776963569/content?start_page=1&view_mode=scroll&access_key=key-2QMTogmRALIsrXB6sZ2c","data-auto-height":"true","data-aspect-ratio":"0.7080062794348508",scrolling:"no",id:"doc_67631",width:"100%",height:"600",frameBorder:"0"})})),Container=dt(motion.div)`
+`,LandingPage=()=>jsxRuntimeExports.jsxs("div",{children:[jsxRuntimeExports.jsx(BackgroundImage,{src:"https://i.ibb.co/540gtyv/digital-world.png"}),jsxRuntimeExports.jsx(AnimatedBackground,{}),jsxRuntimeExports.jsx(Hero,{}),jsxRuntimeExports.jsx(AboutUs,{}),jsxRuntimeExports.jsx(CuratedSolutions,{}),jsxRuntimeExports.jsx(WebDesignSoulution,{}),jsxRuntimeExports.jsx(AppDevSolution,{}),jsxRuntimeExports.jsx(FeaturedApps,{}),jsxRuntimeExports.jsx(DigitalMediaSolution,{}),jsxRuntimeExports.jsx(BookConsultation,{})]}),ScribdWhitepaper=()=>(reactExports.useEffect(()=>{var a;const e=document.createElement("script");e.type="text/javascript",e.async=!0,e.src="https://www.scribd.com/javascripts/embed_code/inject.js";const i=document.getElementsByTagName("script")[0];(a=i.parentNode)==null||a.insertBefore(e,i)},[]),jsxRuntimeExports.jsx("div",{className:"mobile",style:{margin:"12px auto 6px auto",fontFamily:"Helvetica,Arial,Sans-serif",fontSize:"14px",display:"block"},children:jsxRuntimeExports.jsx("iframe",{className:"scribd_iframe_embed",title:"UsCreativz Whitepaper (v1)",src:"https://www.scribd.com/embeds/776963569/content?start_page=1&view_mode=scroll&access_key=key-2QMTogmRALIsrXB6sZ2c","data-auto-height":"true","data-aspect-ratio":"0.7080062794348508",scrolling:"no",id:"doc_67631",width:"100%",height:"600",frameBorder:"0"})})),Container=dt(motion.div)`
   .mobile {
     display: none;
 
