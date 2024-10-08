@@ -3468,6 +3468,10 @@ SPDX-License-Identifier: Apache-2.0
     rgba(0, 0, 0, 0.8) 0px -3px 0px inset;
   border-radius: 1rem;
 
+  img {
+  width: 10rem;
+  }
+
   @media (max-width: 767px) {
     width: 100%;
   }
@@ -3584,7 +3588,7 @@ position: absolute;
       opacity: 0.7;
     }
   }
-`,Hero=()=>{const[e,i]=reactExports.useState(!1),a=reactExports.useRef(null);return reactExports.useEffect(()=>{const s=new IntersectionObserver(([o])=>i(o.isIntersecting),{threshold:.1});return a.current&&s.observe(a.current),()=>{a.current&&s.unobserve(a.current)}},[]),jsxRuntimeExports.jsx(HeroContainer,{ref:a,children:e&&jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment,{children:[jsxRuntimeExports.jsxs(HeroText,{children:[jsxRuntimeExports.jsxs("h1",{children:[jsxRuntimeExports.jsx("span",{children:"Us"})," Redefining ",jsxRuntimeExports.jsx("span",{children:"Creativ"}),"ity",jsxRuntimeExports.jsx("i",{children:"z"})]}),jsxRuntimeExports.jsxs("p",{children:["Empowering ",jsxRuntimeExports.jsx("span",{children:"creators"})," and ",jsxRuntimeExports.jsx("span",{children:"innovators"})," to ",jsxRuntimeExports.jsx("span",{children:"push boundaries"}),", ",jsxRuntimeExports.jsx("span",{children:"collaborate"}),", ",jsxRuntimeExports.jsx("span",{children:"create"})," and ",jsxRuntimeExports.jsx("span",{children:"conquer "}),"with intelligent ",jsxRuntimeExports.jsx("span",{children:"tools"})," and ",jsxRuntimeExports.jsx("span",{children:"creative solutions"}),"."]}),jsxRuntimeExports.jsx(CTAButton,{href:"/#about-us",children:"Discover More 🚀"})]}),jsxRuntimeExports.jsxs(RightPane,{children:[jsxRuntimeExports.jsx(FloatingShape,{size:120,top:"50%",left:"5%"}),jsxRuntimeExports.jsx(FloatingShape,{size:80,top:"10%",left:"50%",color:"#ed2647"}),jsxRuntimeExports.jsx(FloatingShape,{size:100,top:"80%",left:"80%"}),jsxRuntimeExports.jsx(GlowEffect,{})]})]})})},fadeIn=mt`
+`,Hero=()=>{const[e,i]=reactExports.useState(!1),a=reactExports.useRef(null);return reactExports.useEffect(()=>{const s=new IntersectionObserver(([o])=>i(o.isIntersecting),{threshold:.1});return a.current&&s.observe(a.current),()=>{a.current&&s.unobserve(a.current)}},[]),jsxRuntimeExports.jsx(HeroContainer,{ref:a,children:e&&jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment,{children:[jsxRuntimeExports.jsxs(HeroText,{children:[jsxRuntimeExports.jsx("img",{src:fullLogoWhite}),jsxRuntimeExports.jsxs("h1",{children:[jsxRuntimeExports.jsx("span",{children:"Us"})," Redefining ",jsxRuntimeExports.jsx("span",{children:"Creativ"}),"ity",jsxRuntimeExports.jsx("i",{children:"z"})]}),jsxRuntimeExports.jsxs("p",{children:["Empowering ",jsxRuntimeExports.jsx("span",{children:"creators"})," and ",jsxRuntimeExports.jsx("span",{children:"innovators"})," to ",jsxRuntimeExports.jsx("span",{children:"push boundaries"}),", ",jsxRuntimeExports.jsx("span",{children:"collaborate"}),", ",jsxRuntimeExports.jsx("span",{children:"create"})," and ",jsxRuntimeExports.jsx("span",{children:"conquer "}),"with intelligent ",jsxRuntimeExports.jsx("span",{children:"tools"})," and ",jsxRuntimeExports.jsx("span",{children:"creative solutions"}),"."]}),jsxRuntimeExports.jsx(CTAButton,{href:"/#about-us",children:"Discover More 🚀"})]}),jsxRuntimeExports.jsxs(RightPane,{children:[jsxRuntimeExports.jsx(FloatingShape,{size:120,top:"50%",left:"5%"}),jsxRuntimeExports.jsx(FloatingShape,{size:80,top:"10%",left:"50%",color:"#ed2647"}),jsxRuntimeExports.jsx(FloatingShape,{size:100,top:"80%",left:"80%"}),jsxRuntimeExports.jsx(GlowEffect,{})]})]})})},fadeIn=mt`
   from {
     opacity: 0;
     transform: translateY(20px);
